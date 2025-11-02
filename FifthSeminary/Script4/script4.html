@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            window.onload = () => {
+                // alegeți un element din DOM și tratați un eveniment trimis de acesta. 
+                // Creați un eveniment custom pe care îl veți trimite 
+                // și trata odata cu tratarea evenimentului ales al elementului din DOM.
+                const button = document.getElementById("myBtn");
+                const myEvent = new Event("myEvt");
+                const newEvent = new Event("newEvent");
+
+                const clickHandler = () => {
+                    document.dispatchEvent(myEvent);
+                    // console.log("Butonul a fost apasat!");
+                };
+
+                const myEventHandler = () => {
+                    console.log("Butonul a fost apasat!!");
+                    button.dispatchEvent(newEvent);
+                }
+
+                const newEventHandler = () => {
+                    console.log("Al doilea eveniment a fost declansat!");
+                }
+
+                // Prin proprietatea "onclick" putem seta un singur event handler
+                // button.onclick = clickHandler;
+                // Prin metoda "addEventListener()" putem specifia mai multe event handlere
+                // button.addEventListener("click",clickHandler);
+                button.onclick = clickHandler;
+                document.addEventListener("myEvt",myEventHandler);
+                button.addEventListener("newEvent",newEventHandler);
+            }
+        </script>
+    </head>
+    <body>
+        <button id="myBtn">Click me!</button>
+    </body>
+</html>

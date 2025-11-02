@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Agenda telefonica</title>
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 350px;
+                margin-top: 10px;
+            }
+            th, td {
+                border: 1px solid black;
+                padding: 6px;
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Agenda Telefonica</h2>
+        <form id="formular">
+            <label>Nume: <input type="text" id="numeInput" required></label><br><br>
+            <label>Telefon: <input type="text" id="telefonInput" required></label><br><br>
+            <button type="submit">Adauga</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nume</th>
+                    <th>Telefon</th>
+                </tr>
+            </thead>
+            <tbody id="agendaBody"></tbody>
+        </table>
+        <script>
+            // Creați o aplicație simplă de tip agendă 
+            // ce va conține un tabel cu două coloane (Nume, Telefon) 
+            // și un formular pentru adăugarea de noi contacte
+            const form = document.getElementById("formular");
+            const tbody = document.getElementById("agendaBody");
+            form.addEventListener("submit", (element) => {
+                element.preventDefault();
+                const nume = document.getElementById("numeInput").value.trim();
+                const telefon = document.getElementById("telefonInput").value.trim();
+                if(nume === "" || telefon === ""){
+                    return;
+                }
+                const linie = document.createElement("tr");
+                linie.innerHTML = `<td>${nume}</td><td>${telefon}</td>`;
+                tbody.appendChild(linie);
+                form.reset();
+            });
+        </script>
+    </body> 
+</html>
