@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            /* Accesam toate tag-urile */
+             * {
+                background-color: #444;
+                color: #fff;
+            }
+            /* Accesam toate elementele de tip div */
+            div {
+                padding: 10px;
+                color: #000;
+            }
+            /* Accesam elementul cu id-ul container */
+            #container {
+                border: 1px dashed #ccc;
+                margin: 20px
+            }
+            /* Accesam primul copil al elementului cu id-ul container */
+            #container div:first-child {
+                background-color: #222;
+                color: #eee;
+            }
+            /* Inaintea primului copil al elementului cu id-ul container */
+            #container div:first-child::before {
+                content: "Window: ";
+                margin-left: 10px;
+            }
+            /* Accesam ultimul copil al elementului cu id-ul container */
+            #container div:last-child {
+                background-color: #999;
+                text-align: right;
+            }
+            /* Inaintea ultimului copil al elementului cu id-ul container */
+            #container div:last-child::after {
+                content: " Copyright 2023";
+                margin-right: 10px;
+            }
+            /* Accesam elementul din clasa main ale elementului cu id-ul container */
+            #container .main {
+                width: 100%;
+                height: 400px;
+                background-color: #fff;
+                box-sizing: border-box;
+                display: inline-block;
+            }
+            /* Accesam tot ce se afla in elementul din clasa main al elementului cu id-ul container */
+            #container .main * {
+                margin: 0;
+                padding: 10px;
+                background-color: #eee;
+                color: #222;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div>Title</div>
+            <div class="main">
+                <p>a</p>
+                <p>b</p>
+                <p>c</p>
+            </div>
+            <div>Footer</div>
+        </div>
+    </body>
+</html>

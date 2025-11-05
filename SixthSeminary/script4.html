@@ -1,0 +1,73 @@
+<!-- Implementează folosind float în CSS o machetă de 3 x 3 celule ca pentru jocul x si 0  -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                background-color: #fff;
+            }
+            .container {
+                width: 300px;
+                margin: 20px auto;
+            }
+            h1 {
+                margin-bottom: 20px;
+            }
+            .square {
+                float: left;
+                width: 100px;
+                height: 100px;
+                background-color: #f9f9f9;
+                box-sizing: border-box;
+            }
+            .top.right, .middle.middle, .middle.right,
+            .bottom.middle, .bottom.right {
+                border-left: 1px solid #999;
+            }
+            .middle.middle, .middle.right {
+                border-top: 1px solid #999;
+            }
+            .bottom.left, .bottom.middle, .bottom.right {
+                border-top: 1px solid #999;
+            }
+            .top.middle {
+                border-top: none;
+            }
+            .middle.left {
+                border-left: none;
+            }
+            .row::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>Tic Tac Toe</h1>
+            </div>
+
+            <div class="row">
+                <div class="square top left"></div>
+                <div class="square top middle"></div>
+                <div class="square top right"></div>
+            </div>
+
+            <div class="row">
+                <div class="square middle left"></div>
+                <div class="square middle center"></div>
+                <div class="square middle right"></div>
+            </div>
+
+            <div class="row">
+                <div class="square bottom left"></div>
+                <div class="square bottom middle"></div>
+                <div class="square bottom right"></div>
+            </div>
+        </div>
+    </body>
+</html>

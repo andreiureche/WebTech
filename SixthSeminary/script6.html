@@ -1,0 +1,40 @@
+<!-- construiește un meniu care să fie poziționat pe orizontală. Culoarea de background să fie black, 
+ iar la hover să se faca grey. Textul fiecarei opțiuni din meniu trebuie să fie centrat atât pe verticală cât și pe orizontală -->
+ <!DOCTYPE html>
+<html>
+    <head>
+        <title>Meniu orizontal</title>
+        <style>
+            body {
+                margin: 0;
+                font-family: Arial, sans-serif;
+            }
+            .navbar {
+                background-color: black;
+                overflow: hidden;
+            }
+            .navbar a {
+                float: left;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                text-align: center;
+                padding: 14px 20px;
+                text-decoration: none;
+                height: 50px;
+            }
+            .navbar a:hover {
+                background-color: grey;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </body>
+</html>
